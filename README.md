@@ -1,37 +1,8 @@
-## Welcome to GitHub Pages
+## Everything About Kotlin
 
-You can use the [editor on GitHub](https://github.com/sunyjams/AboutKotlin/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+这是一个个人学习项目，记录个人在学习 Koltin 的过程中遇到的问题和心得。如果有人关注，那么感谢你的关心，期待与你共同交流，谢谢！
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### 它大概有哪些内容
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sunyjams/AboutKotlin/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+我是一个 Android 程序员，学习 Kotlin 的目的大部分在于解决 Android 开发中的问题。不过如果你使用 Kotlin 做其它的事情，那么也不妨碍我们交流。无论我们使用这个语言做什么，关于语言本身应该都有很多东西可聊。我自己使用 Java 开发了很长都时间，所以我应该会时不时地会将 Kotlin 与 Java 进行比较。最后，希望我坚持下去，也希望各位想做都事情都能坚持并取得很好都结果。
