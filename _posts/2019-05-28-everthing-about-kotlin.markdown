@@ -2,7 +2,7 @@
 layout: post
 title:  "Everything About Kotlin"
 date:   2019-05-28 17:26:27 +0800
-categories: jekyll update
+categories: 闲聊
 ---
 这是一个个人学习项目，记录个人在学习 Koltin 的过程中遇到的问题和心得。如果有人关注，那么感谢你的关心，期待与你共同交流，谢谢！
 
