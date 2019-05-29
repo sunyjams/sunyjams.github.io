@@ -17,8 +17,8 @@ title: 今天早上吃粉
 email: jamssuny@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Everything about Kotlin
-baseurl: "https://sunyjams.github.io/AboutKotlin/" # the subpath of your site, e.g. /blog
-url: "https://sunyjams.github.io/AboutKotlin/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "https://sunyjams.github.io/AboutKotlin" # the subpath of your site, e.g. /blog
+url: "https://sunyjams.github.io/AboutKotlin" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: sunyjams
 github_username:  sunyjams
 
