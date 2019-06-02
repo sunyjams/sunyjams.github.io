@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "Kotlin 继承"
+date:   2019-05-31 10:35:00 +0800
+categories: Kotlin 基础
+---
+
+## Kotlin 继承
+
+Kotlin 的继承与 Java 类似，Java 使用 extends 关键字而 Kotlin 使用“:”符号来实现对父类的继承。需要注意的是 Kotlin 的类默认是 final 的，如果要允许创建一个类的子类，需要使用 open 关键字来修饰。
+
+    open class View{
+
+    }
+
+可以被重写的方法或者属性同样需要加上 open 关键字
+
+    open class View{
+        open val area = 0
+        open fun click(){}
+    }
+
+一个可以被继承的子类的写法
+
+    open class ClickableView: View{
+        override val area = 1
+        override fun click(){}
+    }
+
+override 意味的同样继承了父类的可访问性，如果需要上面一段代码中的 click 方法不被子类重写，需要添加 final 关键字
+
+    open class ClickableView: View{
+        override val area = 1
+        final override fun click(){}
+    }
+
+上面已经说了，Kotlin的类默认是 final 的，所以默认是不可以被继承的。需要注意一定，不可变属性是不可以被可变属性重写的，以下写法是错误的：
+
+    open class Button: ClickableView{
+        override var area = 1 //错误var属性不可以覆盖val属性
+    }
+
+仔细想以下为什么，父类中的不可变属性编译时会生成一个 getX() 的方法，而子类中如果使用可变属性来重写，除了会生成 getXX() 方法以外，还会生成 setXX() 方法，扩大了使用范围，所以在编译时会出错！
+
+以上是关于 Kotlin 继承的内容，那么为什么 Kotlin 为什么会默认将类设置为 final 呢，以下内容摘自《Kotlin 实战》，它解释了默认类为 final 的意义：
+
+>类默认为 final 带来了一个重要的好处就是这使得在大量场景中的智能转 换成为可能 。 正如我们在 2.3.5 节中提到的，智能转换只能在进行类型检查后没 有改变过的变量上起作用 。 对于一个类来说，这意味着智能转换只能在 val 类 型并且没有自定义访问器的类属性上使用 。这个前提意味着属性必须是 final 的 ， 否则如果一个子类可以重写属性并定义一个自定义的访问器将会打破智能转换 的关键前提。 因为属性默认是 final 的，可以在大多数属性上不加思考地使用 智能转换，这提高了你的代码表现力 。
