@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "Kotlin 高阶函数"
+date:   2019-06-14 11:22:00 +0800
+categories: Kotlin 高级
+---
+
+## Kotlin 高阶函数
+
+Kotlin 中的高阶函数，主要用来让我们实现更加抽象的概念，让我们直面一些抽象的问题。我们以一个比较现实的问题来深入探讨：从书籍（Book）中找出指定类型小说该怎么做？
+
+    data class Book(val name:String, val isbn:String, val     category:String, val author:String, val publictionYear:Int)
+
+    fun findBookByCategory(books:List<Book>, category:String):List<Book>{
+        val bookList = arrayListOf()
+        for(index in 0 until books.size){
+            if(books[index].category == catefory){
+                bookList.add(books[index])
+            }
+        }
+        return bookList
+    }
+
+上面是一个典型的例子，我们从书籍集合中，找到我们想要的子集。那么，我们把问题具体一点，找到1984年出版的科幻小说，那我们就会有点暴躁了。如果继续把问题细化下去，你就会在这里写上百个findXXX()的方法。高阶函数的意义就在于解决这类问题，我们可以把条件作为参数，传递给指定函数。如前面的例子，要判断一本书是否是1984年的科幻小说：
+
+    fun predicate(book:Book):Boolean{
+        return book.publicationYear == 1982 && book.category == "ScienceFiction"
+    }
+
+如何把以上条件作为参数赋给高阶函数呢，我们首先要看看什么是函数类型：
+
+    val sum:(Int, Int) -> Int = {x, y -> x + y}
+
+以上申明的是一个有两个Int参数和一个Int返回值的函数。我们依葫芦画瓢：
+
+    val predicate:(Book) -> Boolean = { book.publicationYear == 1982 && book.category == "ScienceFiction" }
+
+现在来看看如何定义高阶函数，我们我们将条件定义为参数：
+
+    fun findBookByPredicate(books:List<Book>, predicate:(Book)->Boolean):List<Book>{
+        val bookList = arrayListOf()
+        for(index 0 until books.size){
+            if(redicate(books[index])){
+                bookList.add(books[index])
+            }
+        }
+    }
+
+注意上面的 predicate:(Book) -> Boolean 这个就是指明函数为高阶函数的参数，我们在使用时，可以直接使用 lambda 表达式作为条件：
+
+    val result = findBookByPredicate(books, {book-> book.publicationYear == 1982 && book.category == "ScienceFiction"})
+
+    // 作者为 martin 的书籍
+
+    val martinBooks = findBookByPredicate(books, {book-> book.author == "martin"}) 
+
+以上就是高阶函数的简单用法，它的更多用法，以后我会持续更新。
